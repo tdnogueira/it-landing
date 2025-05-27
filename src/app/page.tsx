@@ -1,6 +1,6 @@
 "use client";
 
-import { useDarkMode } from "@/hooks/useDarkMode"; // ajuste o caminho se necessário
+import { useDarkMode } from "@/hooks/useDarkMode";
 import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 
@@ -14,17 +14,21 @@ export default function Page() {
           <Link href="/">IT</Link>
         </h1>
         <nav className="space-x-4 text-sm font-semibold">
-          <a href="/quem-somos" className="hover:underline">
+          <Link href="/quem-somos" className="hover:underline">
             Quem somos
-          </a>
+          </Link>
           <a href="#valores" className="hover:underline">
             Missão & Valores
           </a>
           <a href="#contato" className="hover:underline">
             Fale conosco
           </a>
-          <a href="/aluno">Área do Aluno</a>
-          <a href="/admin">Administrativo</a>
+          <Link href="/aluno" className="hover:underline">
+            Área do Aluno
+          </Link>
+          <Link href="/admin" className="hover:underline">
+            Administrativo
+          </Link>
           <button
             onClick={() => {
               setDarkMode(!darkMode);
