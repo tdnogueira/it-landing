@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br" className={poppins.variable}>
+    <html lang="pt-br">
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -26,13 +26,15 @@ export default function RootLayout({
               try {
                 if (localStorage.getItem('darkMode') === 'true') {
                   document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
                 }
               } catch(e) {}
             `,
           }}
         />
       </head>
-      <body className="font-sans">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

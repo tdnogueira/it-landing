@@ -2,6 +2,7 @@
 
 import { useDarkMode } from "@/hooks/useDarkMode"; // ajuste o caminho se necessário
 import { Moon, Sun } from "lucide-react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function QuemSomos() {
@@ -20,14 +21,14 @@ export default function QuemSomos() {
             IT
           </h1>
           <nav className="space-x-4 text-sm font-semibold">
-            <a
+            <Link
               href="/"
               className={`hover:underline ${
                 pathname === "/" ? "text-primary underline" : ""
               }`}
             >
               Início
-            </a>
+            </Link>
             <a
               href="/quem-somos"
               className={`hover:underline ${
